@@ -1,7 +1,7 @@
 # SimpleMusicPlayer
 A Beautiful&amp;Simple Music Player~
 
-      If you want to use the music in it, please buy a license from Epidemic Sound!
+      If you want to use the music in it, please buy a license from Epidemic Sound or iTunes Store!
 
 The library using for getting audio file's info is:[HERE](https://github.com/Dendim0n/EZAudioFileInfo)
 
