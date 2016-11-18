@@ -11,7 +11,7 @@ import AVFoundation
 
 class MusicPlayer: UIView,UITableViewDelegate,UITableViewDataSource {
     
-    var musicList = ["Real Stuff", "Real Stuff (Instrumental)","我好想你"]
+//    var musicList = ["Real Stuff", "Real Stuff (Instrumental)","我好想你"]
     var fileNameList = ["ES_Real Stuff - Marc Torch","ES_Real Stuff (Instrumental Version) - Marc Torch","missingyou"]
     var fileSuffix = ["mp3","mp3","m4a"]
     
@@ -109,26 +109,27 @@ class MusicPlayer: UIView,UITableViewDelegate,UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return musicList.count
+        return fileNameList.count
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PlayerItemCell
-        cell.lblCount.text = "\(indexPath.row + 1)"
-        cell.lblTime.text = "2:12"
-        cell.lblTitle.text = musicList[indexPath.row]
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        NSString *filepath = [[NSBundle mainBundle]pathForResource:@"bbb" ofType:@"mp3"];
-//        NSData *data = [[NSData data]initWithContentsOfFile:filepath];
         let path = Bundle.main.path(forResource: fileNameList[indexPath.row], ofType: fileSuffix[indexPath.row])
         let fileInfo = EZAudioFileInfo()
         fileInfo.loadFile(path!)
-////        asset.availableMetadataFormats
-//        asset.loadValuesAsynchronously(forKeys: "availableMetadataFormats", completionHandler: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        cell.lblCount.text = "\(indexPath.row + 1)"
+        cell.lblTime.text = fileInfo.getDuration()
+        cell.lblTitle.text = fileInfo.getTitle()
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let path = Bundle.main.path(forResource: fileNameList[indexPath.row], ofType: fileSuffix[indexPath.row])
+        let fileInfo = EZAudioFileInfo()
+        fileInfo.loadFile(path!)
+
         player.audioPlayer = try! AVAudioPlayer.init(data: fileInfo.getData())
         player.audioPlayer.prepareToPlay()
         player.audioPlayer.play()

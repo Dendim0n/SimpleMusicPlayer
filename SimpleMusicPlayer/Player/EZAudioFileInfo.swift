@@ -91,6 +91,15 @@ class EZAudioFileInfo: NSObject {
         }
         return UIImage.init()
     }
+    func getDuration() -> String {
+        guard fileLoaded else {
+            return ""
+        }
+        let tmpAsset = asset!
+        let second = Double(tmpAsset.duration.value) / Double(tmpAsset.duration.timescale)
+        
+        return "\(Int(floor(second/60.0))):\(Int(second) % 60)"
+    }
     func getData() -> Data {
         return NSData.init(contentsOf: fileUrl) as! Data
     }
