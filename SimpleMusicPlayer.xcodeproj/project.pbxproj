@@ -138,6 +138,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		400A8A691DDEF03E007208A5 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				4025F1AB1DDBFEE6004DB4A5 /* UITableView+ReloadAnimation.swift */,
+				400A8A661DDED401007208A5 /* EZAudioFileInfo.swift */,
+				40BAAB7E1DDAEFAF00F20DB5 /* PlayButton.swift */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
 		4081363E1DDD9DB000BB0A46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,12 +196,10 @@
 		40BAAB351DDAEEB800F20DB5 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				4025F1AB1DDBFEE6004DB4A5 /* UITableView+ReloadAnimation.swift */,
-				400A8A661DDED401007208A5 /* EZAudioFileInfo.swift */,
-				408136431DDDA5D300BB0A46 /* ScrollLabel.swift */,
+				400A8A691DDEF03E007208A5 /* libs */,
 				40BAAB7A1DDAEF4D00F20DB5 /* MusicPlayerController.swift */,
+				408136431DDDA5D300BB0A46 /* ScrollLabel.swift */,
 				40BAAB881DDAFE9E00F20DB5 /* MusicPlayer.swift */,
-				40BAAB7E1DDAEFAF00F20DB5 /* PlayButton.swift */,
 				40BAAB8A1DDB044100F20DB5 /* TopPanel.swift */,
 				4025F1AD1DDC1773004DB4A5 /* twitterButton.swift */,
 				40BAAB841DDAFC1100F20DB5 /* PlayerItemCell.swift */,
