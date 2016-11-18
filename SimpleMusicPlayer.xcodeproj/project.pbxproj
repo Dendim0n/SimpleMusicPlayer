@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		400A8A671DDED401007208A5 /* EZAudioFileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400A8A661DDED401007208A5 /* EZAudioFileInfo.swift */; };
+		400A8A681DDED794007208A5 /* missingyou.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 400A8A651DDED2DA007208A5 /* missingyou.m4a */; };
 		402339571DDC5C470048CA61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402339561DDC5C470048CA61 /* Assets.xcassets */; };
 		4025F1AC1DDBFEE6004DB4A5 /* UITableView+ReloadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4025F1AB1DDBFEE6004DB4A5 /* UITableView+ReloadAnimation.swift */; };
 		4025F1AE1DDC1773004DB4A5 /* twitterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4025F1AD1DDC1773004DB4A5 /* twitterButton.swift */; };
@@ -63,6 +65,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		400A8A651DDED2DA007208A5 /* missingyou.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = missingyou.m4a; sourceTree = "<group>"; };
+		400A8A661DDED401007208A5 /* EZAudioFileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZAudioFileInfo.swift; sourceTree = "<group>"; };
 		402339561DDC5C470048CA61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4025F1AB1DDBFEE6004DB4A5 /* UITableView+ReloadAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ReloadAnimation.swift"; sourceTree = "<group>"; };
 		4025F1AD1DDC1773004DB4A5 /* twitterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = twitterButton.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				40BAAB251DDAEDC600F20DB5 /* ViewController.swift */,
 				4081363A1DDD9C5D00BB0A46 /* ES_Real Stuff - Marc Torch.mp3 */,
 				4081363B1DDD9C5D00BB0A46 /* ES_Real Stuff (Instrumental Version) - Marc Torch.mp3 */,
+				400A8A651DDED2DA007208A5 /* missingyou.m4a */,
 				40BAAB271DDAEDC600F20DB5 /* Main.storyboard */,
 				402339561DDC5C470048CA61 /* Assets.xcassets */,
 				40BAAB2C1DDAEDC600F20DB5 /* LaunchScreen.storyboard */,
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				4025F1AB1DDBFEE6004DB4A5 /* UITableView+ReloadAnimation.swift */,
+				400A8A661DDED401007208A5 /* EZAudioFileInfo.swift */,
 				408136431DDDA5D300BB0A46 /* ScrollLabel.swift */,
 				40BAAB7A1DDAEF4D00F20DB5 /* MusicPlayerController.swift */,
 				40BAAB881DDAFE9E00F20DB5 /* MusicPlayer.swift */,
@@ -297,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400A8A681DDED794007208A5 /* missingyou.m4a in Resources */,
 				408136461DDDB4A500BB0A46 /* TopPanel.xib in Resources */,
 				40BAAB761DDAEF2400F20DB5 /* Info.plist in Resources */,
 				40BAAB2E1DDAEDC600F20DB5 /* LaunchScreen.storyboard in Resources */,
@@ -339,6 +346,7 @@
 				40BAAB5C1DDAEF2400F20DB5 /* ConstraintConfig.swift in Sources */,
 				40BAAB6E1DDAEF2400F20DB5 /* ConstraintOffsetTarget.swift in Sources */,
 				40BAAB631DDAEF2400F20DB5 /* ConstraintLayoutGuide.swift in Sources */,
+				400A8A671DDED401007208A5 /* EZAudioFileInfo.swift in Sources */,
 				40BAAB241DDAEDC600F20DB5 /* AppDelegate.swift in Sources */,
 				40BAAB791DDAEF2400F20DB5 /* UILayoutSupport+Extensions.swift in Sources */,
 				40BAAB681DDAEF2400F20DB5 /* ConstraintMakerEditable.swift in Sources */,

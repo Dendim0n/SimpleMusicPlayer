@@ -11,8 +11,9 @@ import AVFoundation
 
 class MusicPlayer: UIView,UITableViewDelegate,UITableViewDataSource {
     
-    var musicList = ["Real Stuff", "Real Stuff (Instrumental)"]
-    var fileNameList = ["ES_Real Stuff - Marc Torch","ES_Real Stuff (Instrumental Version) - Marc Torch"]
+    var musicList = ["Real Stuff", "Real Stuff (Instrumental)","我好想你"]
+    var fileNameList = ["ES_Real Stuff - Marc Torch","ES_Real Stuff (Instrumental Version) - Marc Torch","missingyou"]
+    var fileSuffix = ["mp3","mp3","m4a"]
     
     let topPanel = TopPanel()
     
@@ -123,21 +124,27 @@ class MusicPlayer: UIView,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        NSString *filepath = [[NSBundle mainBundle]pathForResource:@"bbb" ofType:@"mp3"];
 //        NSData *data = [[NSData data]initWithContentsOfFile:filepath];
-        let path = Bundle.main.path(forResource: fileNameList[indexPath.row], ofType: "mp3")
-        let data = NSData.init(contentsOfFile: path!)
-        player.audioPlayer = try! AVAudioPlayer.init(data: data! as Data)
+        let path = Bundle.main.path(forResource: fileNameList[indexPath.row], ofType: fileSuffix[indexPath.row])
+        let fileInfo = EZAudioFileInfo()
+        fileInfo.loadFile(path!)
+////        asset.availableMetadataFormats
+//        asset.loadValuesAsynchronously(forKeys: "availableMetadataFormats", completionHandler: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        player.audioPlayer = try! AVAudioPlayer.init(data: fileInfo.getData())
         player.audioPlayer.prepareToPlay()
         player.audioPlayer.play()
         player.btnControl.setToPause()
         player.btnControl.isUserInteractionEnabled = true
         player.lblTitle.alpha = 0
         player.lblArtist.alpha = 0
+        player.imgCover.alpha = 0.5
         player.lblTitle.text = musicList[indexPath.row]
-        player.lblArtist.text = "Marc Torch - Epidemic Sound"
+        player.lblArtist.text = "\(fileInfo.getArtist()) \(fileInfo.getAlbum())"
+        player.imgCover.image = fileInfo.getPic()
         UIView.animate(withDuration: 0.3, animations: {
             self.player.btnControl.alpha = 1
             self.player.lblTitle.alpha = 1
             self.player.lblArtist.alpha = 1
+            self.player.imgCover.alpha = 1
         })
     }
     

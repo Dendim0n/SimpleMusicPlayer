@@ -15,7 +15,16 @@ class PlayerView: UIView {
     var isPlaying = true
     var lblTitle = UILabel()
     var lblArtist = UILabel()
-    var imgCover = UIImageView()
+    var imgCover:UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = UIColor.white
+        imageView.layer.shadowColor = UIColor.gray.cgColor
+        //        imgCover.layer.cornerRadius = 5
+        imageView.layer.shadowOffset = CGSize.init(width: 0, height: 0)
+        imageView.layer.shadowOpacity = 1.0
+        imageView.layer.shadowRadius = 5
+        return imageView
+    }()
     
     lazy var btnControl:PlayButton = {
         let button = PlayButton.init()
@@ -116,11 +125,7 @@ class PlayerView: UIView {
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 20
         
-        imgCover.layer.shadowColor = UIColor.gray.cgColor
-//        imgCover.layer.cornerRadius = 5
-        imgCover.layer.shadowOffset = CGSize.init(width: 0, height: 0)
-        imgCover.layer.shadowOpacity = 1.0
-        imgCover.layer.shadowRadius = 5
+
     }
     
     func goPlay() {
