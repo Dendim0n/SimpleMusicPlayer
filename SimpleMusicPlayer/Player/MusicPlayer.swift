@@ -137,9 +137,9 @@ class MusicPlayer: UIView,UITableViewDelegate,UITableViewDataSource {
         player.lblTitle.alpha = 0
         player.lblArtist.alpha = 0
         player.imgCover.alpha = 0.5
-        player.lblTitle.text = musicList[indexPath.row]
+        player.lblTitle.text = fileInfo.getTitle()
         player.lblArtist.text = "\(fileInfo.getArtist()) \(fileInfo.getAlbum())"
-        player.imgCover.image = fileInfo.getPic()
+        player.imgCover.image = fileInfo.getArtwork()
         UIView.animate(withDuration: 0.3, animations: {
             self.player.btnControl.alpha = 1
             self.player.lblTitle.alpha = 1

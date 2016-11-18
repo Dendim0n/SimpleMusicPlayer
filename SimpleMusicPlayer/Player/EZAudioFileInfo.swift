@@ -14,6 +14,7 @@ class EZAudioFileInfo: NSObject {
     var asset:AVAsset?
     var filePath:String?
     var fileLoaded = false
+    var placeHolderImage:UIImage?
     var fileUrl:URL {
         get {
             return URL.init(fileURLWithPath: self.filePath!)
@@ -71,8 +72,11 @@ class EZAudioFileInfo: NSObject {
         }
         return ""
     }
-    func getPic() -> UIImage {
+    func getArtwork() -> UIImage {
         guard fileLoaded else {
+            if placeHolderImage != nil {
+                return placeHolderImage!
+            }
             return UIImage.init()
         }
         let tmpAsset = asset!
@@ -81,6 +85,9 @@ class EZAudioFileInfo: NSObject {
             if metaDataItem.commonKey == "artwork" {
                 return UIImage.init(data: metaDataItem.dataValue!)!
             }
+        }
+        if placeHolderImage != nil {
+            return placeHolderImage!
         }
         return UIImage.init()
     }
