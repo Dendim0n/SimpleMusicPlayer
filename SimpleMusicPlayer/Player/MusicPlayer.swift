@@ -129,6 +129,7 @@ class MusicPlayer: UIView,UITableViewDelegate,UITableViewDataSource {
         let path = Bundle.main.path(forResource: fileNameList[indexPath.row], ofType: fileSuffix[indexPath.row])
         let fileInfo = EZAudioFileInfo()
         fileInfo.loadFile(path!)
+        fileInfo.placeHolderImage = UIImage.init(named: "cover.jpeg")
 
         player.audioPlayer = try! AVAudioPlayer.init(data: fileInfo.getData())
         player.audioPlayer.prepareToPlay()
