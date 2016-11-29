@@ -66,17 +66,6 @@ class twitterButton : UIButton {
     private var emitterImageView:twitterEmitterImageView?
     private var image:UIImage?
     
-    //    func setHighlighted(_ highlighted:Bool) {
-    //        super.setHighlighted(highlighted)
-    //        UIView.animate(withDuration: 0.3, animations: {
-    //            if highlighted {
-    //                self.alpha = 0.5
-    //            } else {
-    //                self.alpha = 1
-    //            }
-    //        })
-    //    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -209,7 +198,7 @@ class twitterEmitterImageView: UIImageView {
         }
     }
     
-    var emitterImage:UIImage {
+    var emitterImage:UIImage = UIImage() {
         didSet {
             self.imageShape.mask?.contents = emitterImage.cgImage
         }
@@ -219,7 +208,6 @@ class twitterEmitterImageView: UIImageView {
     var disableAnimation:Bool = false
     
     override init(frame: CGRect) {
-        emitterImage = UIImage.init(named: "heart")!
         super.init(frame: frame)
         createLayer()
     }
